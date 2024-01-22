@@ -18,14 +18,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #011812;
 
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -34,10 +29,14 @@ body {
   }
 }
 
-.hero{
+.header {
   height: 4rem;
 }
 
-.hero{
+.hero {
   height: calc(100vh - 4rem);
+}
+
+nav li {
+  cursor: pointer;
 }
