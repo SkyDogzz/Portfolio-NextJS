@@ -4,7 +4,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: "700" });
 
 export default function Contact() {
   return (
-    <section className="skills flex flex-col justify-center gap-10 pb-20">
+    <section id="contact" className="skills flex flex-col justify-center gap-10 pb-20">
       <h1 className={roboto.className + " text-4xl text-center"}>Contact</h1>
       <p className="text-center">
         Feel free to contact me by email or through my social networks.

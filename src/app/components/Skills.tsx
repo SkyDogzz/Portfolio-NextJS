@@ -7,6 +7,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: "700" });
 export default function Skills() {
   return (
     <section
+    id="skills"
       className={
         roboto.className + " skills flex flex-col justify-center gap-10 pb-20"
       }
