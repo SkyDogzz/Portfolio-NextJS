@@ -1,30 +1,35 @@
-import Link from 'next/link'
+"use client";
+import { Link } from "react-scroll";
 
 export default function Header() {
-    return (
-        <header className="header flex justify-between py-5">
-            <h1>Thomas Stephan</h1>
+  return (
+    <header className="header flex justify-between py-5">
+      <h1>Thomas Stephan</h1>
 
-            <nav>
-                <ul className="flex gap-5">
-                    <HeaderLi url="#skills" number={0} name="Skills" />
-                    <HeaderLi url="#projects" number={1} name="Projects" />
-                    <HeaderLi url="#contact" number={2}  name="Contact" />
-                </ul>
-            </nav>
-        </header>
-    )
+      <nav>
+        <ul className="flex gap-5">
+          <HeaderLi url="skills" number={0} name="Skills" />
+          <HeaderLi url="projects" number={1} name="Projects" />
+          <HeaderLi url="contact" number={2} name="Contact" />
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
 interface HeaderLiProps {
-    url: string
-    number: number
-    name: string
+  url: string;
+  number: number;
+  name: string;
 }
 
-function HeaderLi({ url, number, name }: HeaderLiProps)
-{
-    return (
-        <li><Link href={url}><span className='text-sky-400 pr-2'>{number}.</span>{name}</Link></li>
-    )
+function HeaderLi({ url, number, name }: HeaderLiProps) {
+  return (
+    <li>
+      <Link to={url} smooth={true} offset={50} duration={1000}>
+        <span className="text-sky-400 pr-2">{number}.</span>
+        {name}
+      </Link>
+    </li>
+  );
 }
