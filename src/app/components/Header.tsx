@@ -2,14 +2,14 @@ import Link from 'next/link'
 
 export default function Header() {
     return (
-        <header className="flex justify-between py-5">
+        <header className="header flex justify-between py-5">
             <h1>Thomas Stephan</h1>
 
             <nav>
                 <ul className="flex gap-5">
-                    <HeaderLi url="/" number={0} name="Skills" />
-                    <HeaderLi url="/" number={1} name="Projects" />
-                    <HeaderLi url="/" number={2}  name="Contact" />
+                    <HeaderLi url="#skills" number={0} name="Skills" />
+                    <HeaderLi url="#projects" number={1} name="Projects" />
+                    <HeaderLi url="#contact" number={2}  name="Contact" />
                 </ul>
             </nav>
         </header>

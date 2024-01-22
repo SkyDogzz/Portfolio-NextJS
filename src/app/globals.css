@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.hero{
+  height: 4rem;
+}
+
+.hero{
+  height: calc(100vh - 4rem);
+}
