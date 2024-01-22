@@ -7,7 +7,7 @@ export default function Hero() {
     <section
       className={roboto.className + " hero flex flex-col justify-center gap-10 pb-20"}
     >
-      <h1 className=" text-sky-400 text-xl">
+      <h1 className=" text-emerald-400 text-xl">
         Hey There! I'm -<br /> <span className="text-8xl">Thomas Stephan</span>
       </h1>
       <p className="text-3xl">I'm a Fullstack Web Developer</p>

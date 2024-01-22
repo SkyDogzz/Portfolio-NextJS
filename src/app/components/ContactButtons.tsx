@@ -21,7 +21,7 @@ interface HeroButtonProps {
   function HeroButton({ url, icon, name }: HeroButtonProps) {
     return (
       <Link href={url} target="_blank">
-        <button className="flex gap-2 items-center bg-sky-600 py-1 px-3 rounded-full">
+        <button className="flex gap-2 items-center bg-emerald-600 py-1 px-3 rounded-full">
           {icon}
           {name}
         </button>

@@ -27,7 +27,7 @@ function HeaderLi({ url, number, name }: HeaderLiProps) {
   return (
     <li>
       <Link to={url} smooth={true} offset={50} duration={1000}>
-        <span className="text-sky-400 pr-2">{number}.</span>
+        <span className="text-emerald-400 pr-2">{number}.</span>
         {name}
       </Link>
     </li>
