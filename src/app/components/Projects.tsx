@@ -1,7 +1,7 @@
 import { Roboto } from "next/font/google";
 import React from "react";
 const roboto = Roboto({ subsets: ["latin"], weight: "700" });
-import { FaReact, FaLink } from "react-icons/fa";
+import { FaReact, FaLink, FaPlaneDeparture } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Projects() {
@@ -12,13 +12,20 @@ export default function Projects() {
     >
       <h1 className={roboto.className + " text-4xl text-center"}>Projects</h1>
       <div className="cards grid gap-10 grid-cols-3">
-        <Project
+      <Project
           name="Portfolio"
           description="This Portfolio"
           link="/"
           icon={<FaReact />}
           techs={["Reactjs", "Nextjs", "Tailwindcss", "Sass"]}
         />
+        <Project
+        name="Far Away"
+        description="A website for a fictional travel agency"
+        link="http://141.145.201.252:81/pages/"
+        icon={<FaPlaneDeparture />}
+        techs={["Tailwindcss", "Sass"]}
+      />
       </div>
     </section>
   );
