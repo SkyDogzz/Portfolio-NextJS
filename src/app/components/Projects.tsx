@@ -18,20 +18,6 @@ export default function Projects() {
           link="/"
           icon={<FaReact />}
           techs={["Reactjs", "Nextjs", "Tailwindcss", "Sass"]}
-        />{" "}
-        <Project
-          name="Portfolio"
-          description="This Portfolio"
-          link="/"
-          icon={<FaReact />}
-          techs={["Reactjs", "Nextjs", "Tailwindcss", "Sass"]}
-        />{" "}
-        <Project
-          name="Portfolio"
-          description="This Portfolio"
-          link="/"
-          icon={<FaReact />}
-          techs={["Reactjs", "Nextjs", "Tailwindcss", "Sass"]}
         />
       </div>
     </section>

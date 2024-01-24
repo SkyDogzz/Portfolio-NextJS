@@ -21,6 +21,7 @@ body {
   background-color: #011812;
 
   scroll-behavior: smooth;
+  color: #fff;
 }
 
 @layer utilities {
