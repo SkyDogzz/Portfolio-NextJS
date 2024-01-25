@@ -16,7 +16,7 @@ export default function Skills() {
     <section
       id="skills"
       className={
-        roboto.className + " skills flex flex-col justify-center gap-10 pb-20"
+        roboto.className + " skills flex flex-col justify-center gap-10 py-20"
       }
     >
       <h1 className=" text-4xl text-center">Skills</h1>

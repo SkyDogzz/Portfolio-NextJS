@@ -8,7 +8,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="skills flex flex-col justify-center gap-10 pb-20"
+      className="skills flex flex-col justify-center gap-10 py-20"
     >
       <h1 className={roboto.className + " text-4xl text-center"}>Projects</h1>
       <div className="cards grid gap-10 grid-cols-3">
