@@ -1,13 +1,20 @@
 import { Roboto } from "next/font/google";
 import React from "react";
-import { FaReact, FaSass, FaLaravel, FaNodeJs, FaFigma, FaGithub } from "react-icons/fa";
+import {
+  FaReact,
+  FaSass,
+  FaLaravel,
+  FaNodeJs,
+  FaFigma,
+  FaGithub,
+} from "react-icons/fa";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "700" });
 
 export default function Skills() {
   return (
     <section
-    id="skills"
+      id="skills"
       className={
         roboto.className + " skills flex flex-col justify-center gap-10 pb-20"
       }
@@ -35,6 +42,7 @@ export default function Skills() {
               icon: <FaSass />,
             },
           ]}
+          key={1}
         />
         <SkillsLi
           category="Backend"
@@ -52,6 +60,7 @@ export default function Skills() {
               icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/233px-Postgresql_elephant.svg.png",
             },
           ]}
+          key={2}
         />
         <SkillsLi
           category="Design"
@@ -63,14 +72,15 @@ export default function Skills() {
           ]}
         />
         <SkillsLi
-        category="Other"
-        items={[
-          {
-            name: "Git & Github",
-            icon: <FaGithub />,
-          },
-        ]}
-      />
+          category="Other"
+          items={[
+            {
+              name: "Git & Github",
+              icon: <FaGithub />,
+            },
+          ]}
+          key={3}
+        />
       </div>
     </section>
   );
@@ -91,7 +101,7 @@ function SkillsLi({ category, items }: SkilslLiProps) {
       <ul className="flex flex-col gap-1">
         {items.map((item) => {
           return (
-            <li>
+            <li key={item.name}>
               <div className="flex gap-2 items-center py-1 text-xl">
                 {typeof item.icon === "string" ? (
                   <img className="w-6" src={item.icon} alt={item.name} />

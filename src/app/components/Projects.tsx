@@ -41,7 +41,7 @@ interface ProjectProps {
 
 function Project({ name, description, link, icon, techs }: ProjectProps) {
   return (
-    <div className="card rounded-2xl bg-emerald-900 min-w-52 p-4 border border-emerald-300 hover:scale-110 transition-all">
+    <div className="card rounded-2xl bg-emerald-900 min-w-52 p-4 border border-emerald-300 hover:scale-110 transition-all" key={name}>
       <div className="cardHeader flex justify-between">
         {icon}
         <Link href={link}>
@@ -53,7 +53,7 @@ function Project({ name, description, link, icon, techs }: ProjectProps) {
         <p>{description}</p>
         <div className="badges flex flex-wrap gap-2 pt-1">
           {techs.map((tech) => (
-            <span className="badge bg-emerald-700 hover:bg-emerald-600 px-2 py-1 rounded-xl gap-2">
+            <span className="badge bg-emerald-700 hover:bg-emerald-600 px-2 py-1 rounded-xl gap-2" key={tech}>
               {tech}
             </span>
           ))}
