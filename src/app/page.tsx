@@ -4,10 +4,13 @@ import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Loader from "./components/Loader";
 import { useSpring, animated } from "react-spring";
 import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
   const [isSkillsVisible, setSkillsIsVisible] = useState(false);
   const [isProjectsVisible, setProjectsIsVisible] = useState(false);
   const [isContactVisible, setContactIsVisible] = useState(false);
@@ -32,29 +35,43 @@ export default function Home() {
   });
 
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    
     const handleScroll = () => {
       const viewHeight = Math.max(
         document.documentElement.clientHeight,
         window.innerHeight
       );
-      if (skills.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 && skills.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200) {
+      if (
+        skills.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
+        skills.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
+      ) {
         setSkillsIsVisible(true);
       } else {
         setSkillsIsVisible(false);
       }
 
-      if (projects.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 && projects.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200) {
+      if (
+        projects.current.getBoundingClientRect().top <=
+          viewHeight * 0.8 + 200 &&
+        projects.current.getBoundingClientRect().bottom >=
+          viewHeight * 0.2 - 200
+      ) {
         setProjectsIsVisible(true);
       } else {
         setProjectsIsVisible(false);
       }
 
-      if (contact.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 && contact.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200) {
+      if (
+        contact.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
+        contact.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
+      ) {
         setContactIsVisible(true);
       } else {
         setContactIsVisible(false);
       }
-
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -63,17 +80,25 @@ export default function Home() {
 
   return (
     <main>
-      <Header />
-      <Hero />
-      <animated.div ref={skills} style={skillsProps} >
-        <Skills />
-      </animated.div>
-      <animated.div ref={projects} style={projectsProps} >
-        <Projects />
-      </animated.div>
-      <animated.div ref={contact} style={contactProps} >
-      <Contact />
-      </animated.div>
+      {loading ? (
+        <div className="flex justify-center items-center w-full h-screen">
+          <Loader />
+        </div>
+      ) : (
+        <>
+          <Header />
+          <Hero />
+          <animated.div ref={skills} style={skillsProps}>
+            <Skills />
+          </animated.div>
+          <animated.div ref={projects} style={projectsProps}>
+            <Projects />
+          </animated.div>
+          <animated.div ref={contact} style={contactProps}>
+            <Contact />
+          </animated.div>
+        </>
+      )}
     </main>
   );
 }

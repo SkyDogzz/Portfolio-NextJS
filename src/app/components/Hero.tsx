@@ -5,7 +5,7 @@ import ContactButtons from "./ContactButtons";
 import TypeIt from "typeit-react";
 import { Canvas } from "@react-three/fiber";
 import { Dodecahedron } from "@react-three/drei";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
   const DodecahedronColor = "#6ee7b7";
