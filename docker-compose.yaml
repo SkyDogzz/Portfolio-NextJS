@@ -1,0 +1,21 @@
+version: '3'
+services:
+  react-app:
+    image: node:21-alpine
+    working_dir: /app
+    restart: always
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000"
+    command: sh -c "npm run dev"
+  nginx:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - react-app
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+    

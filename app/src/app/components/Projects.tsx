@@ -22,9 +22,10 @@ export default function Projects() {
         <Project
         name="Far Away"
         description="A website for a fictional travel agency"
-        link="http://141.145.201.252:81/pages/"
+        link="https://github.com/SkyDogzz/Challenge-semestriel-HTML-CSS-JQuery/"
         icon={<FaPlaneDeparture />}
         techs={["Tailwindcss", "Sass"]}
+        blank
       />
       </div>
     </section>
@@ -37,14 +38,15 @@ interface ProjectProps {
   link: string;
   icon: React.ReactNode;
   techs: string[];
+  blank?: boolean
 }
 
-function Project({ name, description, link, icon, techs }: ProjectProps) {
+function Project({ name, description, link, icon, techs, blank }: ProjectProps) {
   return (
     <div className="card rounded-2xl bg-emerald-900 min-w-52 p-4 border border-emerald-300 hover:scale-110 transition-all" key={name}>
       <div className="cardHeader flex justify-between">
         {icon}
-        <Link href={link}>
+        <Link href={link} target={blank ? "_blank" : ""}>
           <FaLink />
         </Link>
       </div>

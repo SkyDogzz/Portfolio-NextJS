@@ -16,6 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <link rel="icon" href="/favicon.ico" />
       <body className={roboto.className + " container mx-auto max-w-6xl px-4 relative"}>{children}</body>
     </html>
   );
