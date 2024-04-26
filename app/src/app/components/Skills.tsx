@@ -21,7 +21,7 @@ export default function Skills() {
     >
       <h1 className=" text-4xl text-center">Skills</h1>
 
-      <div className="flex justify-between">
+      <div className="flex flex-wrap justify-between gap-5">
         <SkillsLi
           category="Frontend"
           items={[

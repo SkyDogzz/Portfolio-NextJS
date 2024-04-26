@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaDiscord } from "react-icons/fa";
 
 export default function ContactButtons() {
   return (
-    <div className="flex gap-5">
+    <div className="flex flex-wrap gap-5 justify-center sm:justify-start">
       <HeroButton
         url="https://github.com/skydogzz"
         icon={<FaGithub />}
@@ -37,7 +37,7 @@ interface HeroButtonProps {
 function HeroButton({ url, icon, name }: HeroButtonProps) {
   return (
     <Link href={url} target="_blank">
-      <button className="flex gap-2 items-center bg-emerald-600 py-1 px-3 rounded-full hover:scale-110 transition-all">
+      <button className="flex gap-2 items-center bg-emerald-600 py-1 px-3 rounded-full sm:hover:scale-110 transition-all">
         {icon}
         {name}
       </button>
