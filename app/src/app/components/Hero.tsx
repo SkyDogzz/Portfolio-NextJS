@@ -39,7 +39,7 @@ export default function Hero() {
           </Dodecahedron>
         </Canvas>
       </div>
-      <TypeIt options={{ speed: 10 }}>
+      <TypeIt options={{ speed: 10 }} class="sm:text-left text-center">
         <h1 className=" text-emerald-400 text-xl">
           Hey There! I'm -<br />{" "}
           <span className="text-8xl">Thomas Stephan</span>
