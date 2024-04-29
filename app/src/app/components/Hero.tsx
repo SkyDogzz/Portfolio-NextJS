@@ -42,10 +42,10 @@ export default function Hero() {
       </div>
       <TypeIt options={{ speed: 10 }} className="sm:text-left text-center">
         <h1 className=" text-emerald-400 text-xl">
-          Hey There! I'm -<br />{" "}
+          Hey There! I&apos;m -<br />{" "}
           <span className="text-8xl">Thomas Stephan</span>
         </h1>
-        <p className="text-3xl">I'm a Fullstack Web Developer</p>
+        <p className="text-3xl">I&apos;m a Fullstack Web Developer</p>
       </TypeIt>
       <ContactButtons />
     </section>
