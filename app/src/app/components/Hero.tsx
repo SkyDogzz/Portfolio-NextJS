@@ -15,7 +15,8 @@ export default function Hero() {
     const interval = setInterval(() => {
       if (DodecahedronRef.current === null) return;
       DodecahedronRef.current.rotation.x += 0.007;
-      DodecahedronRef.current.rotation.y += 0.007    }, 10);
+      DodecahedronRef.current.rotation.y += 0.007
+    }, 10);
     return () => clearInterval(interval);
   });
 
