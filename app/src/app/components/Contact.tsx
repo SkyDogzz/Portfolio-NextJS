@@ -1,4 +1,4 @@
-import ContactButtons from "./ContactButtons";
+import ContactButtons from "@/app/components/ContactButtons";
 import { Roboto } from "next/font/google";
 const roboto = Roboto({ subsets: ["latin"], weight: "700" });
 

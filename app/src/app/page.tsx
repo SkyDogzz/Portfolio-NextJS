@@ -1,17 +1,14 @@
 "use client";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Documents from "./components/Documents";
-import Loader from "./components/Loader";
+import Header from "@/app/components/Header";
+import Hero from "@/app/components/Hero";
+import Skills from "@/app/components/Skills";
+import Projects from "@/app/components/Projects";
+import Contact from "@/app/components/Contact";
+import Documents from "@/app/components/Documents";
 import { useSpring, animated } from "react-spring";
 import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
   const [isSkillsVisible, setSkillsIsVisible] = useState(false);
   const [isProjectsVisible, setProjectsIsVisible] = useState(false);
   const [isDocumentsVisible, setDocumentIsVisible] = useState(false);
@@ -43,9 +40,9 @@ export default function Home() {
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    if(window.location.hash) {
+      window.history.replaceState({}, document.title, "/");
+    }
 
     const handleScroll = () => {
       const viewHeight = Math.max(
@@ -69,7 +66,7 @@ export default function Home() {
       } else {
         setDocumentIsVisible(false);
       }
-      
+
       if (
         projects.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
         projects.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
@@ -89,34 +86,29 @@ export default function Home() {
       }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <main>
-      {loading ? (
-        <div className="flex justify-center items-center w-full h-screen">
-          <Loader />
-        </div>
-      ) : (
-        <>
-          <Header />
-          <Hero />
-          <animated.div ref={skills} style={skillsProps}>
-            <Skills />
-          </animated.div>
-          <animated.div ref={projects} style={projectsProps}>
-            <Projects />
-          </animated.div>
-          <animated.div ref={documents} style={documentsProps}>
-            <Documents />
-          </animated.div>
-          <animated.div ref={contact} style={contactProps}>
-            <Contact />
-          </animated.div>
-        </>
-      )}
+      <>
+        <Header />
+        <Hero />
+        <animated.div ref={skills} style={skillsProps}>
+          <Skills />
+        </animated.div>
+        <animated.div ref={projects} style={projectsProps}>
+          <Projects />
+        </animated.div>
+        <animated.div ref={documents} style={documentsProps}>
+          <Documents />
+        </animated.div>
+        <animated.div ref={contact} style={contactProps}>
+          <Contact />
+        </animated.div>
+      </>
     </main>
   );
 }

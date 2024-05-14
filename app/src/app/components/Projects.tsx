@@ -2,8 +2,8 @@ import { Roboto } from "next/font/google";
 import React from "react";
 const roboto = Roboto({ subsets: ["latin"], weight: "700" });
 import * as FaIcons from "react-icons/fa6";
-import projects from "../data/projects.json";
-import iconMap from "./iconMap";
+import projects from "@/app/data/projects.json";
+import iconMap from "@/app/components/iconMap";
 import Link from "next/link";
 
 export default function Projects() {

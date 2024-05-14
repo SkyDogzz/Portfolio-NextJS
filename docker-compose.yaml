@@ -1,14 +1,14 @@
 version: '3'
 services:
   react-app:
-    image: node:21-alpine
+    image: node:21-bullseye
     working_dir: /app
     restart: always
     volumes:
       - ./app:/app
     ports:
       - "3000"
-    command: sh -c "npm run build && npm run start"
+    command: sh -c "npm run dev"
   nginx:
     build: .
     ports:

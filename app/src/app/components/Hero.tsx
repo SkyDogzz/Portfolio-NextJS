@@ -1,11 +1,11 @@
 "use client";
 import { Roboto } from "next/font/google";
 const roboto = Roboto({ subsets: ["latin"], weight: "700" });
-import ContactButtons from "./ContactButtons";
+import ContactButtons from "@/app/components/ContactButtons";
 import TypeIt from "typeit-react";
 import { Canvas } from "@react-three/fiber";
 import { Dodecahedron } from "@react-three/drei";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
 
 export default function Hero() {
   const DodecahedronColor = "#6ee7b7";
@@ -18,7 +18,7 @@ export default function Hero() {
       DodecahedronRef.current.rotation.y += 0.007
     }, 10);
     return () => clearInterval(interval);
-  });
+  }, []);
 
   return (
     <section
@@ -30,14 +30,16 @@ export default function Hero() {
         <Canvas>
           <ambientLight intensity={0.1} />
           <directionalLight color="red" position={[0, 0, 5]} />
-          <Dodecahedron ref={DodecahedronRef}
-            args={[1, 0]}
-            position={[0, 0, 0]}
-            rotation={[0, 0, 0]}
-            scale={[1.5, 1.5, 1.5]}
-          >
-            <meshStandardMaterial color={DodecahedronColor} />
-          </Dodecahedron>
+          <Suspense fallback={null}>
+            <Dodecahedron ref={DodecahedronRef}
+              args={[1, 0]}
+              position={[0, 0, 0]}
+              rotation={[0, 0, 0]}
+              scale={[1.5, 1.5, 1.5]}
+            >
+              <meshStandardMaterial color={DodecahedronColor} />
+            </Dodecahedron> 
+          </Suspense>
         </Canvas>
       </div>
       <TypeIt options={{ speed: 10 }} className="sm:text-left text-center">
