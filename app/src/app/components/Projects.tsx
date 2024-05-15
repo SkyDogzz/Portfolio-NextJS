@@ -1,3 +1,4 @@
+"use client"
 import { Roboto } from "next/font/google";
 import React from "react";
 const roboto = Roboto({ subsets: ["latin"], weight: "700" });
@@ -28,14 +29,20 @@ interface ProjectProps {
   link: string;
   icon: string;
   techs: string[];
-  blank?: boolean
+  blank?: boolean;
+  slug?: string;
 }
 
-function Project({ name, description, link, icon, techs, blank }: ProjectProps) {
+function Project({ name, description, link, icon, techs, blank, slug }: ProjectProps) {
   const IconComponent = iconMap[icon];
+  const handleClick = () => {
+    if (slug) {
+      window.location.href = `/projects/${slug}`;
+    }
+  };
 
   return (
-    <div className="card rounded-2xl bg-emerald-900 min-w-52 p-4 border border-emerald-300 sm:hover:scale-110 transition-all" key={name}>
+    <div className="card rounded-2xl bg-emerald-900 min-w-52 p-4 border border-emerald-300 sm:hover:scale-110 transition-all" key={name} onClick={handleClick}>
       <div className="cardHeader flex justify-between">
         {IconComponent && <IconComponent />}
         <Link href={link} target={blank ? "_blank" : ""}>

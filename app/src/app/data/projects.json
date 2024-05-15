@@ -2,6 +2,7 @@
     {
         "name": "Portfolio",
         "description": "My personal portfolio website",
+        "slug": "portfolio",
         "link": "/",
         "icon": "React",
         "techs": [
