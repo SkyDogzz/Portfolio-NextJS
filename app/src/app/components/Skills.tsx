@@ -8,6 +8,7 @@ import {
   FaFigma,
   FaGithub,
 } from "react-icons/fa";
+import Image from "next/image";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "700" });
 
@@ -104,7 +105,7 @@ function SkillsLi({ category, items }: SkilslLiProps) {
             <li key={item.name}>
               <div className="flex gap-2 items-center py-1 text-xl">
                 {typeof item.icon === "string" ? (
-                  <img className="w-6" src={item.icon} alt={item.name} />
+                  <Image className="w-6" src={item.icon} alt={item.name} />
                 ) : (
                   item.icon
                 )}
