@@ -105,7 +105,7 @@ function SkillsLi({ category, items }: SkilslLiProps) {
             <li key={item.name}>
               <div className="flex gap-2 items-center py-1 text-xl">
                 {typeof item.icon === "string" ? (
-                  <Image className="w-6" src={item.icon} alt={item.name} />
+                  <Image className="w-6" src={item.icon} alt={item.name} width={24} height={24} />
                 ) : (
                   item.icon
                 )}
