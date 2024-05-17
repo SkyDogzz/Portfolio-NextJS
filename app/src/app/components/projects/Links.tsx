@@ -14,7 +14,7 @@ export default function Links({ links }: { links: Links[] }) {
                     key={link.name}
                     href={link.url}
                     target={link.blank ? "_blank" : "_self"}
-                    className="text-emerald-700 hover:text-emerald-600"
+                    className="text-emerald-600 hover:text-emerald-500"
                 >
                     {link.name}
                 </Link>

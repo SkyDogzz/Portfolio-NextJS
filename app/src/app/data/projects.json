@@ -6,9 +6,9 @@
         "link": "/",
         "icon": "React",
         "techs": [
-            "HTML",
-            "CSS",
-            "JavaScript"
+            "NextJS",
+            "TailwindCSS",
+            "Typescript"
         ],
         "blank": false
     },
@@ -19,13 +19,15 @@
         "icon": "PlaneDeparture",
         "techs": [
             "Tailwindcss",
-            "Sass"
+            "Sass",
+            "Javascript"
         ],
         "blank": true
     },
     {
         "name": "Mandelbroot visualizer",
         "description": "A visualizer for the Mandelbrot set using asmX86 with nasm",
+        "slug": "mandelbroot",
         "link": "https://github.com/SkyDogzz/mandelbroot/",
         "icon": "Code",
         "techs": [
