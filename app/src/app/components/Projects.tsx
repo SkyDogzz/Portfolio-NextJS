@@ -8,6 +8,8 @@ import iconMap from "@/app/components/iconMap";
 import Link from "next/link";
 
 export default function Projects() {
+  console.log(projects);
+
   return (
     <section
       id="projects"

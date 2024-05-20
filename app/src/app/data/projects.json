@@ -34,5 +34,19 @@
             "C"
         ],
         "blank": true
-    }
+    },
+    {
+        "name": "Portfolio Miles Chaillié",
+        "description": "Portfolio of a mecatronic engineer, with a handmade backend",
+        "slug": "mileschaillie",
+        "icon": "React",
+        "techs": [
+            "NextJS",
+            "TailwindCSS",
+            "Typescript",
+            "Prisma",
+            "PostgreSQL",
+            "Hand made CMS"
+        ],
+        "blank": true}
 ]
