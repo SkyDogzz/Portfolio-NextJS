@@ -24,7 +24,7 @@ export default function Portfolio() {
     ]
 
     return (
-        <section id="portfolio" className="portfolio flex flex-col justify-center gap-10 py-20">
+        <section className="flex flex-col justify-center gap-10 py-20">
             <Title title="This Portfolio" />
             {descriptions.map((description, index) => (
                 <Description key={index} description={description} />

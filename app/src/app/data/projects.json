@@ -3,7 +3,6 @@
         "name": "Portfolio",
         "description": "My personal portfolio website",
         "slug": "portfolio",
-        "link": "/",
         "icon": "React",
         "techs": [
             "NextJS",
@@ -15,7 +14,7 @@
     {
         "name": "Far Away",
         "description": "A website for a fictional travel agency",
-        "link": "https://github.com/SkyDogzz/Challenge-semestriel-HTML-CSS-JQuery/",
+        "slug": "faraway",
         "icon": "PlaneDeparture",
         "techs": [
             "Tailwindcss",
@@ -28,7 +27,6 @@
         "name": "Mandelbroot visualizer",
         "description": "A visualizer for the Mandelbrot set using asmX86 with nasm",
         "slug": "mandelbroot",
-        "link": "https://github.com/SkyDogzz/mandelbroot/",
         "icon": "Code",
         "techs": [
             "asmX86",

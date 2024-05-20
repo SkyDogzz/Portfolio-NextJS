@@ -50,8 +50,8 @@ export default function Home() {
         window.innerHeight
       );
       if (
-        skills.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
-        skills.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
+        skills.current?.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
+        skills.current?.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
       ) {
         setSkillsIsVisible(true);
       } else {
@@ -59,8 +59,8 @@ export default function Home() {
       }
 
       if (
-        documents.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
-        documents.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
+        documents.current?.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
+        documents.current?.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
       ) {
         setDocumentIsVisible(true);
       } else {
@@ -68,8 +68,8 @@ export default function Home() {
       }
 
       if (
-        projects.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
-        projects.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
+        projects.current?.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
+        projects.current?.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
       ) {
         setProjectsIsVisible(true);
       } else {
@@ -77,8 +77,8 @@ export default function Home() {
       }
 
       if (
-        contact.current.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
-        contact.current.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
+        contact.current?.getBoundingClientRect().top <= viewHeight * 0.8 + 200 &&
+        contact.current?.getBoundingClientRect().bottom >= viewHeight * 0.2 - 200
       ) {
         setContactIsVisible(true);
       } else {

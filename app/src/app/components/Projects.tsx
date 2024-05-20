@@ -26,40 +26,34 @@ export default function Projects() {
 interface ProjectProps {
   name: string;
   description: string;
-  link: string;
   icon: string;
   techs: string[];
   blank?: boolean;
   slug?: string;
 }
 
-function Project({ name, description, link, icon, techs, blank, slug }: ProjectProps) {
+function Project({ name, description, icon, techs, slug }: ProjectProps) {
   const IconComponent = iconMap[icon];
-  const handleClick = () => {
-    if (slug) {
-      window.location.href = `/projects/${slug}`;
-    }
-  };
 
   return (
-    <div className="card rounded-2xl bg-emerald-900 min-w-52 p-4 border border-emerald-300 sm:hover:scale-110 transition-all" key={name} onClick={handleClick}>
-      <div className="cardHeader flex justify-between">
-        {IconComponent && <IconComponent />}
-        <Link href={link} target={blank ? "_blank" : ""}>
+    <Link href={`/projects/${slug}`}>
+      <div className="card rounded-2xl bg-emerald-900 min-w-52 p-4 border border-emerald-300 sm:hover:scale-110 transition-all" key={name}>
+        <div className="cardHeader flex justify-between">
+          {IconComponent && <IconComponent />}
           <FaIcons.FaLink className="cursor-pointer" />
-        </Link>
-      </div>
-      <div className="cardBody pt-5">
-        <h2 className={roboto.className + " text-2xl"}>{name}</h2>
-        <p>{description}</p>
-        <div className="badges flex flex-wrap gap-2 pt-1">
-          {techs.map((tech) => (
-            <span className="badge bg-emerald-700 sm:placeholder:hover:bg-emerald-600 px-2 py-1 rounded-xl gap-2" key={tech}>
-              {tech}
-            </span>
-          ))}
+        </div>
+        <div className="cardBody pt-5">
+          <h2 className={roboto.className + " text-2xl"}>{name}</h2>
+          <p>{description}</p>
+          <div className="badges flex flex-wrap gap-2 pt-1">
+            {techs.map((tech) => (
+              <span className="badge bg-emerald-700 sm:placeholder:hover:bg-emerald-600 px-2 py-1 rounded-xl gap-2" key={tech}>
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
