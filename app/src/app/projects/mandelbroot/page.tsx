@@ -23,7 +23,7 @@ export default function Mandelbroot() {
 
     return (
         <section className="flex flex-col justify-center gap-10 py-20">
-            <Title title="This Portfolio" />
+            <Title title="Mandelbroot simulator" />
             {descriptions.map((description, index) => (
                 <Description key={index} description={description} />
             ))}
